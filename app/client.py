@@ -3,7 +3,9 @@ import grpc
 import test_pb2
 import test_pb2_grpc
 
-x = dict(pttransactionID = 'abcde',
+x = dict(
+    label1 = test_pb2.label(labeltext ='lasdsadsa'),
+    pttransactionID = 'abcde',
     ptproperties = 'This is a plain text transaction',
     ptsenderID = 'Will smith')
 def run():

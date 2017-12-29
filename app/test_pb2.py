@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='test.proto',
   package='lmjwtest',
   syntax='proto3',
-  serialized_pb=_b('\n\ntest.proto\x12\x08lmjwtest\"N\n\tplaintext\x12\x17\n\x0fpttransactionID\x18\x01 \x01(\t\x12\x14\n\x0cptproperties\x18\x02 \x01(\t\x12\x12\n\nptsenderID\x18\x03 \x01(\t\"R\n\nencodetext\x12\x18\n\x10\x65nctransactionID\x18\x01 \x01(\t\x12\x15\n\rencproperties\x18\x02 \x01(\t\x12\x13\n\x0b\x65ncsenderID\x18\x03 \x01(\t2I\n\rEncodeService\x12\x38\n\tGetEncode\x12\x13.lmjwtest.plaintext\x1a\x14.lmjwtest.encodetext\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\ntest.proto\x12\x08lmjwtest\"o\n\tplaintext\x12\x1f\n\x06label1\x18\x04 \x01(\x0b\x32\x0f.lmjwtest.label\x12\x17\n\x0fpttransactionID\x18\x01 \x01(\t\x12\x14\n\x0cptproperties\x18\x02 \x01(\t\x12\x12\n\nptsenderID\x18\x03 \x01(\t\"\x1a\n\x05label\x12\x11\n\tlabeltext\x18\x01 \x01(\t\"R\n\nencodetext\x12\x18\n\x10\x65nctransactionID\x18\x01 \x01(\t\x12\x15\n\rencproperties\x18\x02 \x01(\t\x12\x13\n\x0b\x65ncsenderID\x18\x03 \x01(\t2I\n\rEncodeService\x12\x38\n\tGetEncode\x12\x13.lmjwtest.plaintext\x1a\x14.lmjwtest.encodetext\"\x00\x62\x06proto3')
 )
 
 
@@ -33,21 +33,28 @@ _PLAINTEXT = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pttransactionID', full_name='lmjwtest.plaintext.pttransactionID', index=0,
+      name='label1', full_name='lmjwtest.plaintext.label1', index=0,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pttransactionID', full_name='lmjwtest.plaintext.pttransactionID', index=1,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ptproperties', full_name='lmjwtest.plaintext.ptproperties', index=1,
+      name='ptproperties', full_name='lmjwtest.plaintext.ptproperties', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ptsenderID', full_name='lmjwtest.plaintext.ptsenderID', index=2,
+      name='ptsenderID', full_name='lmjwtest.plaintext.ptsenderID', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -66,7 +73,38 @@ _PLAINTEXT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=24,
-  serialized_end=102,
+  serialized_end=135,
+)
+
+
+_LABEL = _descriptor.Descriptor(
+  name='label',
+  full_name='lmjwtest.label',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='labeltext', full_name='lmjwtest.label.labeltext', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=137,
+  serialized_end=163,
 )
 
 
@@ -110,11 +148,13 @@ _ENCODETEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=104,
-  serialized_end=186,
+  serialized_start=165,
+  serialized_end=247,
 )
 
+_PLAINTEXT.fields_by_name['label1'].message_type = _LABEL
 DESCRIPTOR.message_types_by_name['plaintext'] = _PLAINTEXT
+DESCRIPTOR.message_types_by_name['label'] = _LABEL
 DESCRIPTOR.message_types_by_name['encodetext'] = _ENCODETEXT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -124,6 +164,13 @@ plaintext = _reflection.GeneratedProtocolMessageType('plaintext', (_message.Mess
   # @@protoc_insertion_point(class_scope:lmjwtest.plaintext)
   ))
 _sym_db.RegisterMessage(plaintext)
+
+label = _reflection.GeneratedProtocolMessageType('label', (_message.Message,), dict(
+  DESCRIPTOR = _LABEL,
+  __module__ = 'test_pb2'
+  # @@protoc_insertion_point(class_scope:lmjwtest.label)
+  ))
+_sym_db.RegisterMessage(label)
 
 encodetext = _reflection.GeneratedProtocolMessageType('encodetext', (_message.Message,), dict(
   DESCRIPTOR = _ENCODETEXT,
@@ -140,8 +187,8 @@ _ENCODESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=188,
-  serialized_end=261,
+  serialized_start=249,
+  serialized_end=322,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetEncode',

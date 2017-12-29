@@ -10,9 +10,14 @@ service EncodeService {
 
 
 message plaintext {
+    label label1 = 4;
     string pttransactionID = 1;
     string ptproperties = 2;
     string ptsenderID = 3;
+}
+
+message label{
+    string labeltext = 1;
 }
 
 message encodetext {
