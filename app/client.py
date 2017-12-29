@@ -5,6 +5,7 @@ import test_pb2_grpc
 
 x = dict(
     label1 = test_pb2.label(labeltext ='lasdsadsa'),
+    text1 = test_pb2.textxxx(textlabel ='sdasdads'),
     pttransactionID = 'abcde',
     ptproperties = 'This is a plain text transaction',
     ptsenderID = 'Will smith')
